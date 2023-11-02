@@ -12,41 +12,40 @@ const getCoursesBySemester = () => {
     let semester = 'Fall'
     let year = 1
 
-    let courseDictionary = {
-    }
+    let courseDictionary = { }
     let unscheduledCourses = [...courses]
-    const scheduledCourses = [];
+    const scheduledCourseIds = [];
 
     while (unscheduledCourses.length > 0) {
-        console.log(unscheduledCourses)
-        const currentCourses = [];
+        const currentCourses = []; // courses we will take this semester
+        const thisSemestersScheduledIds = [] // we cant say we've taken a course until the end of the semester
+
         unscheduledCourses.forEach((course) => {
-            if (!course.prereqs.filter(p => !scheduledCourses.includes(p)).length)
-            {
+            const filteredPrereqs = course.prereqs.filter(id => !scheduledCourseIds.includes(id));
+
+            if (!filteredPrereqs.length) {
                 currentCourses.push(course);
-                scheduledCourses.push(course.id);
+                thisSemestersScheduledIds.push(course.id);
             }
         });
 
+        // move semester and year to the next values
         courseDictionary[semester + " " + year] = currentCourses;
         if (semester === "Fall") {
-            semester = "Spring"   
+            semester = "Spring"
         }
         else {
             year++;
             semester = "Fall"
         }
 
-        console.log(currentCourses)
-        unscheduledCourses = unscheduledCourses.filter((course) => {
-            if (currentCourses.includes(course)) {
-                return false;
-            } else { 
-                return true;
-            }
-        })
+        // remove courses we schedule from the remaining courses
+        unscheduledCourses = unscheduledCourses.filter(
+            (course) => !thisSemestersScheduledIds.includes(course.id)
+        )
 
-        
+        // update past schedule with classes we took that semester
+        scheduledCourseIds.push(...thisSemestersScheduledIds)
 
     }
     return courseDictionary;
