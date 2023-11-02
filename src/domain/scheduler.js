@@ -12,11 +12,44 @@ const getCoursesBySemester = () => {
     let semester = 'Fall'
     let year = 1
 
-    let courseDictionary = {}
+    let courseDictionary = {
+    }
     let unscheduledCourses = [...courses]
-    while(unscheduledCourses.length > 0) {
+    const scheduledCourses = [];
+
+    while (unscheduledCourses.length > 0) {
+        console.log(unscheduledCourses)
+        const currentCourses = [];
+        unscheduledCourses.forEach((course) => {
+            if (!course.prereqs.filter(p => !scheduledCourses.includes(p)).length)
+            {
+                currentCourses.push(course);
+                scheduledCourses.push(course.id);
+            }
+        });
+
+        courseDictionary[semester + " " + year] = currentCourses;
+        if (semester === "Fall") {
+            semester = "Spring"   
+        }
+        else {
+            year++;
+            semester = "Fall"
+        }
+
+        console.log(currentCourses)
+        unscheduledCourses = unscheduledCourses.filter((course) => {
+            if (currentCourses.includes(course)) {
+                return false;
+            } else { 
+                return true;
+            }
+        })
+
+        
 
     }
+    return courseDictionary;
 }
 
 export default {
