@@ -28,7 +28,7 @@ const getCoursesBySemester = () => {
                 thisSemestersScheduledIds.push(course.id);
             }
         });
-
+        
         // move semester and year to the next values
         courseDictionary[semester + " " + year] = currentCourses;
         if (semester === "Fall") {
