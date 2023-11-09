@@ -123,7 +123,8 @@
         "title": "Telemetry & Operations",
         "credits": 3,
         "prereqs": ["SE 3250", "SE 3520", "SE 3820"],
-        "semestersOffered": ["Spring"]
+        "semestersOffered": ["Spring"],
+        "emphasis": "Web Development"
     },
     {
         "id": "SE 4230",
@@ -151,7 +152,8 @@
         "title": "Advanced Front-End Development",
         "credits": 3,
         "prereqs": ["SE 3140", "SE 3630", "SE 3830"],
-        "semestersOffered": ["Fall"]
+        "semestersOffered": ["Fall"],
+        "emphasis": "Web Development"
     },
     {
         "id": "SE 4340",
@@ -203,11 +205,59 @@
         "semestersOffered": ["Spring","Fall"]
     },
     {
+        "id": "MATH 3280",
+        "title": "Data Mining",
+        "credits": 3,
+        "prereqs": ["MATH 3080"],
+        "semestersOffered": ["Spring","Fall"],
+        "emphasis": "Data Science"
+    },
+    {
+        "id": "MATH 3480",
+        "title": "Machine Learning",
+        "credits": 3,
+        "prereqs": ["MATH 3280"],
+        "semestersOffered": ["Spring","Fall"],
+        "emphasis": "Data Science"
+    },
+    {
+        "id": "MATH 3080",
+        "title": "Foundations of Data Science",
+        "credits": 3,
+        "prereqs": ["MATH 1210", "MATH 2010"],
+        "semestersOffered": ["Spring","Fall"],
+        "emphasis": "Data Science"
+    },
+    {
         "id": "MATH 3040",
         "title": "Stats for Scientists & Engineers",
         "credits": 3,
         "prereqs": ["MATH 1210"],
         "semestersOffered": ["Spring","Fall"]
+    },
+    {
+        "id": "BUS 1600",
+        "title": "Entrepreneurship Seminars",
+        "credits": 1,
+        "prereqs": [],
+        "semestersOffered": ["Spring","Fall"],
+        "emphasis": "Entrepreneurship"
+    },
+    {
+        "id": "BUS 2222",
+        "title": "Entrepreneurship",
+        "credits": 3,
+        "prereqs": [],
+        "semestersOffered": ["Spring","Fall"],
+        "emphasis": "Entrepreneurship"
+    },
+    {
+        "id": "BUS 2650",
+        "title": "Management Principles for Entrepreneurs",
+        "credits": 3,
+        "prereqs": [],
+        "semestersOffered": ["Spring","Fall"],
+        "emphasis": "Entrepreneurship"
     },
     {
         "id": "GNST 1200",
@@ -271,5 +321,29 @@
         "credits": 3,
         "prereqs": [],
         "semestersOffered": ["Spring","Fall"]
+    },
+    {
+        "id": "ART 2400",
+        "title": "Intro to Graphic Design",
+        "credits": 3,
+        "prereqs": ["ART 1140"],
+        "semestersOffered": ["Spring","Fall"],
+        "emphasis": "Digital Media Design"
+    },
+    {
+        "id": "ART 1140",
+        "title": "4D Time",
+        "credits": 3,
+        "prereqs": [],
+        "semestersOffered": ["Spring","Fall"],
+        "emphasis": "Digital Media Design"
+    },
+    {
+        "id": "ART 1120",
+        "title": "2D Surface",
+        "credits": 3,
+        "prereqs": [],
+        "semestersOffered": ["Spring","Fall"],
+        "emphasis": "Digital Media Design"
     }
 ]
