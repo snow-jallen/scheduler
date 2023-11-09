@@ -18,8 +18,8 @@ instance.connect({
     connector: 'Straight'
 })
 
-const resp = fetch("https://raw.githubusercontent.com/snow-jallen/scheduler/master/package.json")
-resp.then(r => r.json()).then(json => console.log(json))
+const resp = await fetch("https://raw.githubusercontent.com/snow-jallen/scheduler/master/data/courses.json")
+console.log(await resp.json())
 
 scheduler.setCourses(await schedulerSvc.GetCourses());
 
